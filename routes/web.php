@@ -11,16 +11,6 @@
 |
 */
 
-Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function () {
-    Route::get('/', 'ApiController@getMethods');
-    Route::group(['prefix' => 'get'], function () {
-        Route::group(['prefix' => 'php'], function () {
-            Route::group(['prefix' => '7'], function () {
-                Route::get('versions', 'ApiController@getActualPHPVersions');
-            });
-        });
-    });
-});
-
+Route::get('/','Api\ApiController@getHome');
 
 
