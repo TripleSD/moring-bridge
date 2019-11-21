@@ -22,6 +22,10 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function () {
             Route::get('version', 'BridgeInfoController@getIndex');
         });
 
+        Route::group(['prefix' => 'moring'], function () {
+            Route::get('version', 'MoringInfoController@getIndex');
+        });
+
         Route::group(['prefix' => 'php'], function () {
             Route::group(['prefix' => '7'], function () {
                 Route::get('versions', 'ApiController@getActualPHPVersions');

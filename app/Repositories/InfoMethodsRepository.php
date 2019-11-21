@@ -14,6 +14,13 @@ class InfoMethodsRepository extends Repository
                     'description' => 'Bridge current version',
                 ),
             ),
+            'moring' => array(
+                'version' => array(
+                    'request' => env('APP_URL').'/v1/get/moring/version',
+                    'method' => 'GET',
+                    'description' => 'Moring current version',
+                ),
+            ),
             'php' => array(
                 '7' =>
                     array(
