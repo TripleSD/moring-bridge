@@ -8,6 +8,11 @@ use App\Repositories\PHPVersionsRepository;
 
 class ApiController extends Controller
 {
+    public function getHome()
+    {
+        return 'hello';
+
+    }
     public function getMethods(InfoMethodsRepository $repository)
     {
         return $repository->getInfo();

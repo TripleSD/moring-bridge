@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,7 +11,25 @@ use Illuminate\Http\Request;
 |
 */
 
-
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
 //});
+
+Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function () {
+    Route::get('/', 'ApiController@getMethods');
+    Route::group(['prefix' => 'get'], function () {
+        Route::group(['prefix' => 'bridge'], function () {
+            Route::get('version', 'BridgeInfoController@getIndex');
+        });
+
+        Route::group(['prefix' => 'moring'], function () {
+            Route::get('version', 'MoringInfoController@getIndex');
+        });
+
+        Route::group(['prefix' => 'php'], function () {
+            Route::group(['prefix' => '7'], function () {
+                Route::get('versions', 'ApiController@getActualPHPVersions');
+            });
+        });
+    });
+});
