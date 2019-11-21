@@ -9,8 +9,8 @@ class MoringInfoController extends Controller
 {
     public function getIndex(MoringInfoRepository $repository)
     {
-        return json_encode(array(
+        return json_encode(
             $repository->getCurrentVersion()
-        ));
+        );
     }
 }

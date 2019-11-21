@@ -8,6 +8,6 @@ class MoringInfoRepository extends Repository
 {
     public function getCurrentVersion()
     {
-        return MoringVersions::get();
+        return MoringVersions::select('version','human_version')->get();
     }
 }
