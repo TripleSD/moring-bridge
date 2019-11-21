@@ -10,7 +10,7 @@ class BridgeInfoController extends Controller
     public function getIndex(BridgeInfoRepository $repository)
     {
         return json_encode(array(
-            $repository->getVersion()
+            $repository->getCurrentVersion()
         ));
     }
 }
