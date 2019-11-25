@@ -53,7 +53,7 @@ class InfoMethodsRepository extends Repository
                 ],
             ],
             'identificators' => [
-                'get' => [
+                'create' => [
                     'request' => env('APP_URL') . '/v1/identificators/create',
                     'method' => 'GET',
                     'data' => 'JSON (string)',
