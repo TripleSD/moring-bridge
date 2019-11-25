@@ -18,7 +18,7 @@ class StatisticsInfoController extends Controller
         $identificator->identificator = $uuid;
         $identificator->remote_addr = ip2long($request->server('REMOTE_ADDR'));
         $identificator->save();
-        return $identificator->only('identificator');
+        return $identificator->getAttributeValue('identificator');
     }
 
     public function checkIdentificator($identificator)
