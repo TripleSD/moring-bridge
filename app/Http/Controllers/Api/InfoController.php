@@ -5,21 +5,25 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Repositories\InfoMethodsRepository;
 use App\Repositories\PHPVersionsRepository;
+use Illuminate\Support\Facades\Response;
 
-class ApiController extends Controller
+
+class InfoController extends Controller
 {
     public function getHome()
     {
         return 'hello';
-
     }
+
     public function getMethods(InfoMethodsRepository $repository)
     {
-        return $repository->getInfo();
+        return Response::json($repository->getInfo(), 200,
+            array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_SLASHES);
     }
 
     public function getActualPHPVersions(PHPVersionsRepository $repository)
     {
-        return $repository->getVersions();
+        return Response::json($repository->getVersions(), 200,
+            array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_SLASHES);
     }
 }
