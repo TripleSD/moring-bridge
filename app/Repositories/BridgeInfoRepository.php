@@ -4,8 +4,8 @@ namespace App\Repositories;
 
 class BridgeInfoRepository extends Repository
 {
-    public function getVersion()
+    public function getCurrentVersion()
     {
-        return '1.0.1';
+        return (string)'1.0.1';
     }
 }
