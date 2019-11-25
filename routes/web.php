@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/','Api\ApiController@getHome');
+Route::group( ['namespace' => 'Api'], function () {
+    Route::get('/', 'InfoController@getHome');
+});
+
+Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function () {
+    Route::get('/', 'InfoController@getMethods');
+});
 
 

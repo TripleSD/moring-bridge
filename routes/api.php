@@ -16,20 +16,16 @@
 //});
 
 Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function () {
-    Route::get('/', 'ApiController@getMethods');
-    Route::group(['prefix' => 'get'], function () {
-        Route::group(['prefix' => 'bridge'], function () {
-            Route::get('version', 'BridgeInfoController@getIndex');
-        });
+    
+    Route::group(['prefix' => 'bridge', 'namespace' => 'Bridge'], function () {
+            Route::get('version', 'BridgeInfoController@getCurrentVersion');
+    });
 
-        Route::group(['prefix' => 'moring'], function () {
-            Route::get('version', 'MoringInfoController@getIndex');
-        });
+    Route::group(['prefix' => 'moring','namespace' => 'Moring'], function () {
+        Route::get('version', 'MoringInfoController@getVersions');
+    });
 
-        Route::group(['prefix' => 'php'], function () {
-            Route::group(['prefix' => '7'], function () {
-                Route::get('versions', 'ApiController@getActualPHPVersions');
-            });
-        });
+    Route::group(['prefix' => 'php','namespace' => 'Php'], function () {
+        Route::get('versions', 'PhpInfoController@getActualVersions');
     });
 });

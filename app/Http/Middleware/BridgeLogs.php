@@ -2,7 +2,7 @@
 
 namespace App\Http\Middleware;
 
-use App\Http\Controllers\Api\BridgeLogsController;
+use App\Http\Controllers\Api\Bridge\BridgeLogsController;
 use Closure;
 
 class BridgeLogs
