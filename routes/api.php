@@ -1,35 +1,27 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
-
-//Route::middleware('auth:api')->get('/user', function (Request $request) {
-//    return $request->user();
-//});
-
 Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function () {
-    Route::get('/', 'ApiController@getMethods');
-    Route::group(['prefix' => 'get'], function () {
-        Route::group(['prefix' => 'bridge'], function () {
-            Route::get('version', 'BridgeInfoController@getIndex');
-        });
 
-        Route::group(['prefix' => 'moring'], function () {
-            Route::get('version', 'MoringInfoController@getIndex');
-        });
+    Route::group(['prefix' => 'bridge', 'namespace' => 'Bridge'], function () {
+        Route::get('version', 'BridgeInfoController@getCurrentVersion');
+    });
 
-        Route::group(['prefix' => 'php'], function () {
-            Route::group(['prefix' => '7'], function () {
-                Route::get('versions', 'ApiController@getActualPHPVersions');
-            });
-        });
+    Route::group(['prefix' => 'moring','namespace' => 'Moring'], function () {
+        Route::get('version', 'MoringInfoController@getVersions');
+    });
+
+    Route::group(['prefix' => 'php','namespace' => 'Php'], function () {
+        Route::get('versions', 'PhpInfoController@getActualVersions');
+    });
+
+    Route::group(['prefix' => 'statistics','namespace' => 'Statistics'], function () {
+        Route::post('host', 'StatisticsSaveController@postHost');
+        Route::post('servers', 'StatisticsSaveController@postServers');
+        Route::post('sites', 'StatisticsSaveController@postSites');
+    });
+
+    Route::group(['prefix' => 'identificators','namespace' => 'Statistics'],function() {
+        Route::get('/create', 'StatisticsInfoController@createIdentificator');
+        Route::get('/check', 'StatisticsInfoController@createIdentificator');
     });
 });

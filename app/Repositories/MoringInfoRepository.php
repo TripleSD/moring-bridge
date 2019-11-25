@@ -6,8 +6,8 @@ use App\Models\MoringVersions;
 
 class MoringInfoRepository extends Repository
 {
-    public function getCurrentVersion()
+    public function getVersions()
     {
-        return MoringVersions::select('version','human_version')->get();
+        return MoringVersions::pluck('version','human_version');
     }
 }
