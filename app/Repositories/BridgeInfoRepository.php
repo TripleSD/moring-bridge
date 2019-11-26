@@ -6,6 +6,6 @@ class BridgeInfoRepository extends Repository
 {
     public function getCurrentVersion()
     {
-        return (string)'004';
+        return (string)'005';
     }
 }
