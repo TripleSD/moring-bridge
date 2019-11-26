@@ -8,6 +8,6 @@ class MoringInfoRepository extends Repository
 {
     public function getVersions()
     {
-        return MoringVersions::pluck('version','human_version');
+        return MoringVersions::pluck('build','created_at');
     }
 }

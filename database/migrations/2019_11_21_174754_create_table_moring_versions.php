@@ -15,8 +15,7 @@ class CreateTableMoringVersions extends Migration
     {
         Schema::create('moring_versions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('version'); // 101
-            $table->string('human_version'); // 1.0.1
+            $table->string('build');
             $table->timestamps();
         });
     }
