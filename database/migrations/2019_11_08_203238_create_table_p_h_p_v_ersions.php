@@ -15,7 +15,7 @@ class CreateTablePHPVErsions extends Migration
     {
         Schema::create('php_versions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('version')->comment('Last version number');
+            $table->string('version')->comment('Last version number');
             $table->integer('branch')->comment('Branch');
             $table->timestamps();
         });
