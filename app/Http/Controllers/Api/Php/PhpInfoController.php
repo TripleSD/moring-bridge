@@ -25,14 +25,14 @@ class PhpInfoController extends Controller
             return Response::json(
                 $repository->getVersions(),
                 200,
-                array('Content-Type' => 'application/json;charset=utf8'),
+                ['Content-Type' => 'application/json;charset=utf8'],
                 JSON_UNESCAPED_SLASHES
             );
         } else {
             return Response::json(
-                null,
+                'Identificator Error',
                 200,
-                array('Content-Type' => 'application/json;charset=utf8'),
+                ['Content-Type' => 'application/json;charset=utf8'],
                 JSON_UNESCAPED_SLASHES
             );
         }
