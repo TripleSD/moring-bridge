@@ -2,10 +2,12 @@
 
 namespace App\Repositories;
 
+use Config;
+
 class BridgeInfoRepository extends Repository
 {
     public function getCurrentVersion()
     {
-        return (string)'005';
+        return (integer) Config::get('moring.build');
     }
 }

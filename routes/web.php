@@ -11,11 +11,11 @@
 |
 */
 
-Route::group( ['namespace' => 'Api'], function () {
-    Route::get('/', 'InfoController@getHome');
+Route::group( ['namespace' => 'Web'], function () {
+    Route::get('/', 'HomeController@getHome');
 });
 
-Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function () {
+Route::group(['prefix' => 'v1', 'namespace' => 'Web'], function () {
     Route::get('/', 'InfoController@getMethods');
 });
 
