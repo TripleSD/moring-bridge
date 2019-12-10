@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\BridgeLogs;
+use Carbon\Carbon;
 
 class BridgeLogsRepository extends Repository
 {
@@ -14,5 +15,16 @@ class BridgeLogsRepository extends Repository
         $string->request_uri = $request->server('REQUEST_URI');
         $string->request_method = $request->server('REQUEST_METHOD');
         $string->save();
+    }
+
+    public function getSummaryCount()
+    {
+        return (integer)BridgeLogs::all()->count();
+    }
+
+    public function getSummaryDailyCount()
+    {
+        return (integer)BridgeLogs::whereBetween('created_at', [Carbon::now()->startOfDay(), Carbon::now()->endOfDay()])
+            ->count();
     }
 }
