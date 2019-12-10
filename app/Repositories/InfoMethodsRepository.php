@@ -59,12 +59,6 @@ class InfoMethodsRepository extends Repository
                     'data' => 'JSON (string)',
                     'description' => 'Create identificator of copy',
                 ],
-                'check' => [
-                    'request' => env('APP_URL') . '/v1/identificators/check',
-                    'method' => 'GET',
-                    'data' => 'JSON (string)',
-                    'description' => 'Check identificator of copy',
-                ],
             ],
         ];
     }
