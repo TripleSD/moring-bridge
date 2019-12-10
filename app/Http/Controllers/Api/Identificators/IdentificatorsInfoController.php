@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Api\Identificators;
 use App\Http\Controllers\Controller;
 use App\Repositories\IdentificatorsRepository;
 use Illuminate\Http\Request;
+use Response;
 
-class InfoController extends Controller
+class IdentificatorsInfoController extends Controller
 {
     private $identificatorsRepository;
 
@@ -17,7 +18,12 @@ class InfoController extends Controller
 
     public function createIdentificator(Request $request)
     {
-        return $this->identificatorsRepository->createIdentificator($request);
+        return Response::json(
+            $this->identificatorsRepository->createIdentificator($request),
+            200,
+            array('Content-Type' => 'application/json;charset=utf8'),
+            JSON_UNESCAPED_SLASHES
+        );
     }
 
     public function checkIdentificator(Request $request)
