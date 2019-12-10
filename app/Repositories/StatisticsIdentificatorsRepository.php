@@ -5,7 +5,7 @@ namespace App\Repositories;
 use App\Models\StatisticsIdentificators;
 use Carbon\Carbon;
 
-class StatisticsRepository extends Repository
+class StatisticsIdentificatorsRepository extends Repository
 {
     public function getSummaryCopiesCount()
     {
