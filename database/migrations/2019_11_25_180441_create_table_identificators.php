@@ -13,7 +13,7 @@ class CreateTableStatisticsIdentificators extends Migration
      */
     public function up()
     {
-        Schema::create('statistics_identificators', function (Blueprint $table) {
+        Schema::create('identificators', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('identificator')->comment('UUID identificator');
             $table->bigInteger('remote_addr')->comment('IP who requested identificator.');
@@ -28,6 +28,6 @@ class CreateTableStatisticsIdentificators extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('statistics_identificators');
+        Schema::dropIfExists('identificators');
     }
 }

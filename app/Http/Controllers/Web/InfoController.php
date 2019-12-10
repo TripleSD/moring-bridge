@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use App\Repositories\InfoMethodsRepository;
 use App\Repositories\PHPVersionsRepository;
-use Illuminate\Support\Facades\Response;
+use Response;
 
 
 class InfoController extends Controller

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class StatisticsIdentificators extends Model
+class Identificators extends Model
 {
 
 }
