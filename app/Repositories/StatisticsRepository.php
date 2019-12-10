@@ -2,19 +2,19 @@
 
 namespace App\Repositories;
 
-use App\Models\StatisticsIdentificators;
+use App\Models\Identificators;
 use Carbon\Carbon;
 
-class StatisticsIdentificatorsRepository extends Repository
+class StatisticsRepository extends Repository
 {
     public function getSummaryCopiesCount()
     {
-        return (integer)StatisticsIdentificators::all()->count();
+        return (integer)Identificators::all()->count();
     }
 
     public function getActiveCopiesCount()
     {
-        return (integer)StatisticsIdentificators::whereBetween(
+        return (integer)Identificators::whereBetween(
             'updated_at',
             [
                 Carbon::now()->startOfDay(),
