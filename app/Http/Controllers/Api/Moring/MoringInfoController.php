@@ -3,18 +3,25 @@
 namespace App\Http\Controllers\Api\Moring;
 
 use App\Http\Controllers\Controller;
-use App\Models\StatisticsIdentificators;
+use App\Repositories\IdentificatorsRepository;
 use App\Repositories\MoringInfoRepository;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Response;
+use Response;
 
 class MoringInfoController extends Controller
 {
+    private $identificatorsRepository;
+
+    public function __construct()
+    {
+        $this->identificatorsRepository = new IdentificatorsRepository();
+    }
+
     public function getVersions(Request $request, MoringInfoRepository $repository)
     {
-        $identificators = StatisticsIdentificators::where('identificator', $request->identificator)->first();
+        $identificator = $this->identificatorsRepository->checkIdentificator($request->input('identificator'));
 
-        if ($identificators != null) {
+        if ($identificator != null) {
             return Response::json($repository->getVersions(), 200,
                 array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_SLASHES);
         } else {
