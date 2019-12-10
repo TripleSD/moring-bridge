@@ -8,7 +8,6 @@ use App\Repositories\BridgeInfoRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 
-
 class BridgeInfoController extends Controller
 {
     public function getCurrentVersion(Request $request, BridgeInfoRepository $repository)
