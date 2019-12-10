@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Repositories\BridgeLogsRepository;
-use App\Repositories\StatisticsRepository;
+use App\Repositories\StatisticsIdentificatorsRepository;
 
 class HomeController extends Controller
 {
@@ -14,7 +14,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->bridgeLogRepository = new BridgeLogsRepository();
-        $this->statisticsRepository = new StatisticsRepository();
+        $this->statisticsRepository = new StatisticsIdentificatorsRepository();
     }
 
     public function getHome()
