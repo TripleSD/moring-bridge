@@ -8,6 +8,6 @@ class BridgeInfoRepository extends Repository
 {
     public function getCurrentVersion()
     {
-        return (integer) Config::get('moring.build');
+        return (string) Config::get('moring.build');
     }
 }
