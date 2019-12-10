@@ -30,7 +30,7 @@ class BridgeInfoController extends Controller
             );
         } else {
             return Response::json(
-                null,
+                'Identificator Error',
                 200,
                 ['Content-Type' => 'application/json;charset=utf8'],
                 JSON_UNESCAPED_SLASHES

@@ -5,10 +5,13 @@ namespace App\Repositories;
 use App\Models\Identificators;
 use Carbon\Carbon;
 use Ramsey\Uuid\Uuid;
-use Response;
 
 class IdentificatorsRepository extends Repository
 {
+    /*
+     * Создание идентификатора для API
+     * Create identificator for API
+     */
     public function createIdentificator($request)
     {
         $uuid = Uuid::uuid1();
@@ -19,6 +22,10 @@ class IdentificatorsRepository extends Repository
         return (string)$identificator->getAttributeValue('identificator');
     }
 
+    /*
+     * Проверка идентификатора
+     * Identificator's check
+     */
     public function checkIdentificator($identificator)
     {
         $identificator = Identificators::where('identificator', $identificator)
@@ -28,12 +35,6 @@ class IdentificatorsRepository extends Repository
             Identificators::where('identificator', $identificator)->update(['updated_at' => Carbon::now()]);
         }
 
-        return Response::json(
-            $identificator,
-            200,
-            ['Content-Type' => 'application/json;charset=utf8'],
-            JSON_UNESCAPED_SLASHES
-        );
+        return (string)$identificator;
     }
-
 }
