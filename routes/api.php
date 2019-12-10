@@ -20,8 +20,8 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function () {
         Route::post('sites', 'StatisticsSaveController@postSites');
     });
 
-    Route::group(['prefix' => 'identificators','namespace' => 'Statistics'],function() {
-        Route::get('/create', 'StatisticsInfoController@createIdentificator');
-        Route::get('/check', 'StatisticsInfoController@createIdentificator');
+    Route::group(['prefix' => 'identificators','namespace' => 'Identificators'],function() {
+        Route::get('/create', 'InfoController@createIdentificator');
+        Route::get('/check', 'InfoController@checkIdentificator');
     });
 });

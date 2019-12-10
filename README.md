@@ -13,8 +13,12 @@ MoingBridge является opensource проектом. Лицезируетс
 ***
 ### Лог изменений по версиям
 
-[Build.001](https://github.com/TripleSD/moring-bridge/releases/tag/build.001)
-- **(Upd)** - (API) Добавлени обновление записи при запросе идентификатора для учета активных копий
+[Build.003](https://github.com/TripleSD/moring-bridge/releases/tag/build.003)
+- **(Fix)** - (API) Исправлено обновление записи при запросе идентификатора для учета активных копий
+- **(Fix)** - (API) Исправлена проверка идентификатора
+
+[Build.002](https://github.com/TripleSD/moring-bridge/releases/tag/build.002)
+- **(Upd)** - (API) Добавлено обновление записи при запросе идентификатора для учета активных копий
 
 [Build.001](https://github.com/TripleSD/moring-bridge/releases/tag/build.001)
 - **(New)** - Начало разработки основной системы на базе фреймворка Laravel 6.5.0
