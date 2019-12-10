@@ -30,6 +30,8 @@ class StatisticsInfoController extends Controller
             $identificator->updated_at = Carbon::now();
         }
 
+        $identificator->updated_at = Carbon::now();
+
         return Response::json($identificator, 200,
             array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_SLASHES);
     }
