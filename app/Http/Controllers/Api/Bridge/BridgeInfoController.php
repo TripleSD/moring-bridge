@@ -25,7 +25,7 @@ class BridgeInfoController extends Controller
             return Response::json($repository->getCurrentVersion(), 200,
                 array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_SLASHES);
         } else {
-            return Response::json(null, 200,
+            return Response::json('Identificator Error', 200,
                 array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_SLASHES);
         }
     }
