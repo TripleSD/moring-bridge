@@ -8,6 +8,6 @@ class PHPVersionsRepository extends Repository
 {
     public function getVersions()
     {
-        return PHPVersions::pluck('version','branch');
+        return PHPVersions::pluck('version','branch','deprecated_status');
     }
 }
