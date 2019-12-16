@@ -13,6 +13,13 @@ MoingBridge является opensource проектом. Лицезируетс
 ***
 ### Лог изменений по версиям
 
+[Build.005](https://github.com/TripleSD/moring-bridge/releases/tag/build.005)
+- **(Upd)** - Добавлен учет deprecated версий PHP интерпретаторов
+
+[Build.004](https://github.com/TripleSD/moring-bridge/releases/tag/build.004)
+- **(Upd)** - добавлен вывод ошибок к некоторым API методам
+- **(Fix)** - удален неиспользуемый код, перенос кода по контроллерам и репозиториям. 
+
 [Build.004](https://github.com/TripleSD/moring-bridge/releases/tag/build.004)
 - **(Upd)** - добавлен вывод ошибок к некоторым API методам
 - **(Fix)** - удален неиспользуемый код, перенос кода по контроллерам и репозиториям. 
