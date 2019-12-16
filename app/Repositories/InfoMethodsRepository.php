@@ -29,7 +29,7 @@ class InfoMethodsRepository extends Repository
                     'method' => 'GET',
                     'data' => 'JSON (array)',
                     'description' => 'Current PHP versions',
-                    'additionally' => 'https://www.php.net/eol.php',
+                    'additionally' => 'https://www.php.net/eol.php | https://www.php.net/supported-versions.php',
                 ],
             ],
             'statistics' => [
