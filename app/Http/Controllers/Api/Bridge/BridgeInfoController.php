@@ -22,11 +22,19 @@ class BridgeInfoController extends Controller
         $identificator = $this->identificatorsRepository->checkIdentificator($request->input('identificator'));
 
         if ($identificator != null) {
-            return Response::json($repository->getCurrentVersion(), 200,
-                array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_SLASHES);
+            return Response::json(
+                $repository->getCurrentVersion(),
+                200,
+                ['Content-Type' => 'application/json;charset=utf8'],
+                JSON_UNESCAPED_SLASHES
+            );
         } else {
-            return Response::json('Identificator Error', 200,
-                array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_SLASHES);
+            return Response::json(
+                'Identificator Error',
+                200,
+                ['Content-Type' => 'application/json;charset=utf8'],
+                JSON_UNESCAPED_SLASHES
+            );
         }
     }
 }
