@@ -18,6 +18,7 @@ class IdentificatorsRepository extends Repository
         $identificator                = new Identificators();
         $identificator->identificator = $uuid;
         $identificator->remote_addr   = $request->server('REMOTE_ADDR');
+        $identificator->env           = $request->input('env');
         $identificator->save();
         return (string) $identificator->getAttributeValue('identificator');
     }
