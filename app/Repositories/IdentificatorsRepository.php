@@ -33,14 +33,14 @@ class IdentificatorsRepository extends Repository
      * Проверка идентификатора
      * Identificator's check
      */
-    public function checkIdentificator($identificator, $env)
+    public function checkIdentificator($identificator)
     {
         $identificator = Identificators::where('identificator', $identificator)
             ->pluck('identificator')->first();
 
         if ($identificator != null) {
             Identificators::where('identificator', $identificator)
-                ->update(['env' => $env, 'updated_at' => Carbon::now()]);
+                ->update(['updated_at' => Carbon::now()]);
         }
 
         return (string) $identificator;
