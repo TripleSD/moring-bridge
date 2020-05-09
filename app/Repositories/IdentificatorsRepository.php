@@ -30,7 +30,6 @@ class IdentificatorsRepository extends Repository
     public function checkIdentificator($identificator, $env)
     {
         $identificator = Identificators::where('identificator', $identificator)
-            ->where('env', $env)
             ->pluck('identificator')->first();
 
         if ($identificator != null) {
