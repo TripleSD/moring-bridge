@@ -19,7 +19,8 @@ class MoringInfoController extends Controller
 
     public function getVersions(Request $request, MoringInfoRepository $repository)
     {
-        $identificator = $this->identificatorsRepository->checkIdentificator($request->input('identificator'));
+        $identificator = $this->identificatorsRepository
+            ->checkIdentificator($request->input('identificator'), $request->input('env'));
 
         if ($identificator != null) {
             return Response::json(

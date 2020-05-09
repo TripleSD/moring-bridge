@@ -19,7 +19,8 @@ class PhpInfoController extends Controller
 
     public function getActualVersions(Request $request, PHPVersionsRepository $repository)
     {
-        $identificator = $this->identificatorsRepository->checkIdentificator($request->input('identificator'));
+        $identificator = $this->identificatorsRepository
+            ->checkIdentificator($request->input('identificator'), $request->input('env'));
 
         if ($identificator != null) {
             return Response::json(

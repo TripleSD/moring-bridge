@@ -19,7 +19,8 @@ class BridgeInfoController extends Controller
 
     public function getCurrentVersion(Request $request, BridgeInfoRepository $repository)
     {
-        $identificator = $this->identificatorsRepository->checkIdentificator($request->input('identificator'));
+        $identificator = $this->identificatorsRepository
+            ->checkIdentificator($request->input('identificator'), $request->input('env'));
 
         if ($identificator != null) {
             return Response::json(
