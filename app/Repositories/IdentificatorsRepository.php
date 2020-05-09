@@ -14,6 +14,12 @@ class IdentificatorsRepository extends Repository
      */
     public function createIdentificator($request)
     {
+        $env = $request->input('env');
+
+        if (empty($env)) {
+            return 'Empty Env';
+        }
+
         $uuid                         = Uuid::uuid1();
         $identificator                = new Identificators();
         $identificator->identificator = $uuid;
