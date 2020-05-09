@@ -28,6 +28,7 @@ class IdentificatorsInfoController extends Controller
 
     public function checkIdentificator(Request $request)
     {
-        return $this->identificatorsRepository->checkIdentificator($request->input('identificator'));
+        return $this->identificatorsRepository
+            ->checkIdentificator($request->input('identificator', $request->input('env')));
     }
 }
