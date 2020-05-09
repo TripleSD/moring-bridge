@@ -21,7 +21,7 @@ class IdentificatorsInfoController extends Controller
         return Response::json(
             $this->identificatorsRepository->createIdentificator($request),
             200,
-            array('Content-Type' => 'application/json;charset=utf8'),
+            ['Content-Type' => 'application/json;charset=utf8'],
             JSON_UNESCAPED_SLASHES
         );
     }
