@@ -1,5 +1,6 @@
 <?php
 
 return array(
-    'build'  => '005',
+    'build'  => '006',
+    'version' => '0.1.0'
 );
