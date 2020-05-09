@@ -28,8 +28,6 @@ class AddEnvColumnInIdentificatorsTable extends Migration
      */
     public function down()
     {
-        Schema::table('identificators', function (Blueprint $table) {
-            //
-        });
+       //
     }
 }
