@@ -7,9 +7,24 @@ use Carbon\Carbon;
 
 class StatisticsRepository extends Repository
 {
-    public function getSummaryCopiesCount()
+    public function getSummaryProductionCopiesCount()
     {
         return (integer) Identificators::where('env', 'production')->count();
+    }
+
+    public function getSummaryLocalCopiesCount()
+    {
+        return (integer) Identificators::where('env', 'local')->count();
+    }
+
+    public function getSummaryDevelopmentCopiesCount()
+    {
+        return (integer) Identificators::where('env', 'development')->count();
+    }
+
+    public function getSummaryTestCopiesCount()
+    {
+        return (integer) Identificators::where('env', 'tes')->count();
     }
 
     public function getActiveCopiesCount()

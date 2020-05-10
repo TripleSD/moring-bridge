@@ -14,19 +14,33 @@ class HomeController extends Controller
 
     public function __construct()
     {
-        $this->bridgeLogRepository = new BridgeLogsRepository();
+        $this->bridgeLogRepository  = new BridgeLogsRepository();
         $this->statisticsRepository = new StatisticsRepository();
     }
 
     public function getHome()
     {
-        $currentVersion = Config::get('moring.build');
-        $summaryCount = $this->bridgeLogRepository->getSummaryCount();
-        $summaryDailyCount = $this->bridgeLogRepository->getSummaryDailyCount();
-        $summaryCopiesCount = $this->statisticsRepository->getSummaryCopiesCount();
-        $activeCopiesCount = $this->statisticsRepository->getActiveCopiesCount();
+        $currentVersion                = Config::get('moring.build');
+        $summaryCount                  = $this->bridgeLogRepository->getSummaryCount();
+        $summaryDailyCount             = $this->bridgeLogRepository->getSummaryDailyCount();
+        $summaryProductionCopiesCount  = $this->statisticsRepository->getSummaryProductionCopiesCount();
+        $summaryLocalCopiesCount       = $this->statisticsRepository->getSummaryLocalCopiesCount();
+        $summaryDevelopmentCopiesCount = $this->statisticsRepository->getSummaryDevelopmentCopiesCount();
+        $summaryTestCopiesCount        = $this->statisticsRepository->getSummaryTestCopiesCount();
+        $activeCopiesCount             = $this->statisticsRepository->getActiveCopiesCount();
 
-        return view('home', compact('summaryCount','summaryDailyCount',
-        'summaryCopiesCount','activeCopiesCount','currentVersion'));
+        return view(
+            'home',
+            compact(
+                'summaryCount',
+                'summaryDailyCount',
+                'summaryProductionCopiesCount',
+                'summaryLocalCopiesCount',
+                'summaryDevelopmentCopiesCount',
+                'summaryTestCopiesCount',
+                'activeCopiesCount',
+                'currentVersion'
+            )
+        );
     }
 }

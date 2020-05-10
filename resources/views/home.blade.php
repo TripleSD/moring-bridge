@@ -13,7 +13,16 @@
     Запросов за сутки: {{ $summaryDailyCount }}
 </div>
 <div>
-    Установок за все время: {{ $summaryCopiesCount }}
+    Установок за все время (production): {{ $summaryProductionCopiesCount }}
+</div>
+<div>
+    Установок за все время (local): {{ $summaryLocalCopiesCount }}
+</div>
+<div>
+    Установок за все время (development): {{ $summaryDevelopmentCopiesCount }}
+</div>
+<div>
+    Установок за все время (test): {{ $summaryTestCopiesCount }}
 </div>
 <div>
     Активных копий за сутки: {{ $activeCopiesCount }}
