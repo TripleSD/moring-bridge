@@ -9,7 +9,7 @@ class StatisticsRepository extends Repository
 {
     public function getSummaryCopiesCount()
     {
-        return (integer)Identificators::all()->count();
+        return (integer)Identificators::where('env','production')->count();
     }
 
     public function getActiveCopiesCount()
