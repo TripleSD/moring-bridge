@@ -24,7 +24,7 @@ class StatisticsRepository extends Repository
 
     public function getSummaryTestCopiesCount()
     {
-        return (integer) Identificators::where('env', 'tes')->count();
+        return (integer) Identificators::where('env', 'test')->count();
     }
 
     public function getActiveCopiesCount()
