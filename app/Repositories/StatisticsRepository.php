@@ -9,12 +9,12 @@ class StatisticsRepository extends Repository
 {
     public function getSummaryCopiesCount()
     {
-        return (integer)Identificators::where('env','production')->count();
+        return (integer) Identificators::where('env', 'production')->count();
     }
 
     public function getActiveCopiesCount()
     {
-        return (integer)Identificators::whereBetween(
+        return (integer) Identificators::whereBetween(
             'updated_at',
             [
                 Carbon::now()->startOfDay(),
