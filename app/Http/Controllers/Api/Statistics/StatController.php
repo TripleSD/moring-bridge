@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Api\Php;
+namespace App\Http\Controllers\Api\Statistics;
 
 use Carbon\Carbon;
-use App\Models\Identificators;
 use App\Models\StatisticsVersions;
 use App\Http\Controllers\Controller;
 use App\Repositories\IdentificatorsRepository;
