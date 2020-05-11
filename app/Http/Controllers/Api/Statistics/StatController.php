@@ -25,7 +25,7 @@ class StatController extends Controller
 
         if ($currentVersion->count() === 0) {
             StatisticsVersions::create(
-                ['identificator' => $request->input('identificator'), 'version' => Carbon::now()]
+                ['identificator' => $request->input('identificator'), 'version' => $request->input('version')]
             );
         }
     }
