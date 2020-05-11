@@ -20,7 +20,7 @@ class StatController extends Controller
 
     public function updateVersion(Request $request, PHPVersionsRepository $repository)
     {
-        $currentVersion = StatisticsVersions::where('identicator', $request->input('identificator'))
+        $currentVersion = StatisticsVersions::where('identificator', $request->input('identificator'))
             ->where('version', $request->input('version'))->get();
 
         if (empty($currentVersion)) {
